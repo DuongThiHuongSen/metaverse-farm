@@ -1,26 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Home, Login } from "pages";
+import { useSelector } from "react-redux";
+import "./App.css";
+import { userSelector } from "./selectors/user-selector";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const { userLogin } = useSelector(userSelector);
+
+  return <div className="App">
+    {/* {userLogin?.id ? 'đefd' :''} */}
+    {!userLogin?.id ? <Login/> : <Home/>}
+    </div>;
 }
 
 export default App;

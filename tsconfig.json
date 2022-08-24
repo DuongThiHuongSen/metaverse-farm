@@ -15,21 +15,22 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./src",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "src/*": ["./src/*"],
+      "assets/*": ["./assets/*"],
+      "app.json": ["./app.json"],
+      "package.json": ["./package.json"]
+    },
   },
-  "paths": {
-    "api/*": "api/*",
-    "assets/*": "assets/*",
-    "components/*": "components/*",
-    "constant/*": "constant/*",
-    "contexts/*": "contexts/*",
-    "hooks/*": "hooks/*",
-    "icons/*": "icons/*",
-    "layouts/*": "layouts/*",
-    "store/*": "store/*",
-    "utils/*": "utils/*",
-    "lib/*": "lib/*"
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src"],
-  "exclude": ["node_modules"]
+  
+  "include": ["assets/", "src/", "index.js"],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "jest.config.js",
+    "metro.config.js",
+    "postcss.config.js",
+    "react-native.config.js"
+  ]
 }
