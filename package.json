@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.9.3",
+    "@metaplex-foundation/mpl-token-metadata": "^2.2.1",
+    "@metaplex/js": "^4.12.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/lab": "^5.0.0-alpha.89",
+    "@mui/material": "^5.8.4",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -12,11 +20,14 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "cannon-es": "^0.20.0",
+    "i18next": "^21.9.1",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^11.18.4",
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
+    "react3l-i18next-extractor": "^0.4.0",
     "react3l-localization": "^6.0.0",
     "three": "^0.143.0",
     "typescript": "^4.4.2",
@@ -26,7 +37,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "extract": "i18next-extractor -i src/ -o src/i18n/ -p src/i18n/ extract",
+    "merge": "i18next-extractor -i src/ -o src/i18n/ -p src/i18n/ merge"
   },
   "eslintConfig": {
     "extends": [

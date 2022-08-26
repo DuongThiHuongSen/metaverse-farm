@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -23,7 +23,21 @@
       "package.json": ["./package.json"]
     },
   },
-  
+  "paths": {
+    "api/*": "api/*",
+    "assets/*": "assets/*",
+    "components/*": "components/*",
+    "constant/*": "constant/*",
+    "contexts/*": "contexts/*",
+    "hooks/*": "hooks/*",
+    "icons/*": "icons/*",
+    "layouts/*": "layouts/*",
+    "store/*": "store/*",
+    "utils/*": "utils/*",
+    "lib/*": "lib/*",
+    "config/*": "config/*",
+    "i18n/*": "i18n/*"
+  },
   "include": ["assets/", "src/", "index.js"],
   "exclude": [
     "node_modules",
