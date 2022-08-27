@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { appSlice } from "./app";
 import { languageSlice } from "./language";
 import { serverUrlSlice } from "./serverUrl";
 import { userSlice } from "./user";
@@ -10,6 +11,7 @@ const store = configureStore({
       language: languageSlice.reducer,
       baseUrl: serverUrlSlice.reducer,
       user: userSlice.reducer,
+      app: appSlice.reducer,
     },
     middleware,
   });

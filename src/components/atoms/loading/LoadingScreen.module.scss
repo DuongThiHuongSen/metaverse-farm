@@ -1,0 +1,39 @@
+.wrapper {
+  position: absolute;
+  display: flex;
+  color: #fff;
+  inset: 0;
+  background-color: #000;
+  flex-direction: column;
+}
+
+.background {
+  height: calc(100vh - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 90%;
+    max-width: 976px;
+  }
+}
+
+.progressBar {
+  height: 20px;
+  width: 100%;
+  background-color: #bababa;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progess {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 0;
+  background-color: #5dceff;
+}

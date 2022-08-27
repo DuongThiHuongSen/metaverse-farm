@@ -1,26 +1,15 @@
-import { FC, memo, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { logoRacefi, mainBackground } from "assets";
+import { FC, memo } from "react";
 import { useTranslation } from "react-i18next";
-// import { NS_LOGIN } from "helpers/consts";
-// import ConnectForm from "./form/ConnectForm";
-import { LoginLang } from 'config/lang/LoginLang';
+import ConnectForm from "components/form/ConnectForm";
+import { LoginLang } from "config/lang/LoginLang";
 
 type HomeProps = {};
 
 const Home: FC<HomeProps> = () => {
-  const {t,i18n} = useTranslation();
-  // useEffect(() => {
-  //   console.log(i18n);
-  //   if(!i18n.isInitialized) return;
-  //   console.log(LoginLang.General.SubHeading);
-    
-  //   console.log(t(LoginLang.General.SubHeading), "9999999999");
+  const { t } = useTranslation();
 
-  // },[t, i18n])
-  console.log(i18n, );
-  
-  
   return (
     <Stack
       justifyContent="center"
@@ -58,9 +47,8 @@ const Home: FC<HomeProps> = () => {
         }}
       >
         {t(LoginLang.General.SubHeading)}
-
       </Typography>
-      {/* <ConnectForm /> */}
+      <ConnectForm />
     </Stack>
   );
 };

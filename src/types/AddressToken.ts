@@ -1,0 +1,5 @@
+export enum AddressToken {
+    USDT = "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+    SOLANA = "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+    RACEFI = "H16KXneMDVA1cFuvGA2NL8cutyd235QfQ3tQMN2nYTEd",
+  }

@@ -1,11 +1,11 @@
-// import { Cluster, clusterApiUrl } from "@solana/web3.js";
+import { Cluster, clusterApiUrl } from "@solana/web3.js";
 
 export const SENTRY_DSN = process.env.SENTRY_DSN as string;
 export const OWNER_MINT = process.env.OWNER_MINT as string;
 export const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID as string;
 export const SOCKET_URL = process.env.SOCKET_URL as string;
-// export const SOLANA_NETWORK = process.env.SOLANA_NETWORK as Cluster;
-// export const SOLANA_ENDPOINT = clusterApiUrl(SOLANA_NETWORK);
+export const SOLANA_NETWORK = process.env.SOLANA_NETWORK as Cluster;
+export const SOLANA_ENDPOINT = clusterApiUrl(SOLANA_NETWORK);
 
 export const OG_IMAGE = process.env.OG_IMAGE as string;
 

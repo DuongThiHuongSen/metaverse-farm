@@ -1,9 +1,9 @@
 import { UserState } from 'store/user';
-import { AppLanguage } from './AppLanguage';
+import { LanguageType } from './AppLanguage';
+import { AppState } from './AppState';
 
 export interface ReduxState {
-    language: {
-      language: AppLanguage;
-    };
-    user: UserState;
-  }
+  language: LanguageType
+  user: UserState;
+  app: AppState
+}
