@@ -10,6 +10,7 @@ import { Box, Stack } from "@mui/material";
 import { FuncStateType } from "types/FuncStateType";
 import { appSelector } from "selectors/app-selector";
 import { LoadingScreen } from "components/atoms";
+import { World } from "./world/world";
 
 const paths: ScenePath = {
   bodyWrapper: "metaverse",
@@ -57,39 +58,23 @@ export const Metaverse = () => {
   //     });
   //   };
 
-  const getUserProfile = async () => {
-    // const response = await client.get(Endpoint.USER_PROFILE);
-    // console.log(response);
-  };
-
-  const [showFuncState, setShowFuncState] =
-    useState<FuncStateType>(initialFuncState);
-
-  const handleCloseBackpackModal = () => {
-    setShowFuncState({
-      ...showFuncState,
-      showBackpack: false,
-    });
-  };
-
-  const handleCloseCharacterModal = () => {
-    setShowFuncState({
-      ...showFuncState,
-      showChosenCharacter: false,
-    });
-  };
-
   const changeLoading = (value: boolean) => {
     setLoading(value);
   };
 
   const changeProgress = (value: number) => {
     setProgress(value);
+    
+  };
+
+  const getUserProfile = async () => {
+    // const response = await client.get(Endpoint.USER_PROFILE);
+    // console.log(response);
   };
 
   useEffect(() => {
-    // new World(paths, appState, changeLoading, changeProgress);
-  }, []);
+    new World(paths, appState, changeLoading, changeProgress);
+  }, [appState]);
 
   return (
     <BalanceProvider>

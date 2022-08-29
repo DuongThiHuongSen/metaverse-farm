@@ -13,6 +13,8 @@ import ConnectButton from "./ConnectButton";
 import { LoginLang } from '../../config/lang/LoginLang';
 import { FC, memo } from "react";
 import { CommonLang } from '../../config/lang/CommonLang';
+import store from "store";
+import { appSlice } from "store/app";
 
 type FormProps = {};
 
@@ -95,7 +97,7 @@ const ConnectForm: FC<FormProps> = () => {
                 //     typeConnected: ConnectedType.GUEST,
                 //   }),
                 // );
-                // dispatch(setAppReady(true));
+                store.dispatch(appSlice.actions.setAppReady(true));
               }}
             >
               {t(LoginLang.General.ConnectButtonLabel)}

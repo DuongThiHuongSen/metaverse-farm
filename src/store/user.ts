@@ -1,12 +1,12 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 // import {appStorage} from 'src/app/app-storage';
 // import type {AppUser} from 'src/models';
 
-export interface AppUser{
-    id:string,
-    username:string,
-    password: string,
-    displayName?: string
+export interface AppUser {
+  id: string,
+  username: string,
+  password: string,
+  displayName?: string
 }
 export interface UserState {
   userLogin?: AppUser;
@@ -17,14 +17,14 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  userLogin: {
-    id:'1',
-    username:'',
-    password:'',
-    displayName:'summer'
-  },
-//   token: appStorage.token,
-//   apartmentId: appStorage.apartmentId,
+  // userLogin: {
+  //   id:'1',
+  //   username:'',
+  //   password:'',
+  //   displayName:'summer'
+  // },
+  //   token: appStorage.token,
+  //   apartmentId: appStorage.apartmentId,
 };
 
 export const userSlice = createSlice({

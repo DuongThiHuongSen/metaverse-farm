@@ -1,26 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { AppLanguage } from 'types/AppLanguage';
 import { AppState } from '../types/AppState';
 
-const initialState : AppState = {
-    // language: AppLanguage.VIETNAMESE,
+const initialState: AppState = {
+    appReady: false,
 };
 
 export const appSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
-        changeLanguage: (
+        setAppReady: (
             state: {
-                // language: AppLanguage;
+                appReady?: boolean;
             },
             action: {
-                type: string;
-                payload: AppLanguage;
+                payload: boolean;
             },
         ) => {
-            // state.language = action.payload;
-            // localization.changeLanguage(action.payload);
+            state.appReady = action.payload;
         },
     },
 });
