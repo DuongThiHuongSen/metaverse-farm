@@ -1,15 +1,11 @@
-
-// import LoadingScreen from 'components/loading/LoadingScreen';
-import { useEffect, useState } from "react";
-import { AppState } from "types/AppState";
-// import { World } from "./world/World";
-import { ScenePath } from "types/ScenePath";
-import { useSelector } from "react-redux";
-import BalanceProvider from "contexts/BalanceProvider";
 import { Box, Stack } from "@mui/material";
-import { FuncStateType } from "types/FuncStateType";
-import { appSelector } from "selectors/app-selector";
 import { LoadingScreen } from "components/atoms";
+import BalanceProvider from "contexts/BalanceProvider";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { appSelector } from "selectors/app-selector";
+import { AppState } from "types/AppState";
+import { ScenePath } from "types/ScenePath";
 import { World } from "./world/world";
 
 const paths: ScenePath = {
@@ -64,7 +60,6 @@ export const Metaverse = () => {
 
   const changeProgress = (value: number) => {
     setProgress(value);
-    
   };
 
   const getUserProfile = async () => {
@@ -73,24 +68,20 @@ export const Metaverse = () => {
   };
 
   useEffect(() => {
-    new World(paths, appState, changeLoading, changeProgress);
+    new World(paths, changeLoading, changeProgress);
   }, [appState]);
 
   return (
-    <BalanceProvider>
-      <Stack
-        id="metaverse"
-        sx={{ position: "relative", width: "100vw", height: "100vh" }}
-      >
-        <Box component="canvas" id="metaverseScene" />
-        {loading && <LoadingScreen progress={progress} />}
-
-        {/* <BottomMenu
-            showFuncState={showFuncState}
-            setShowFuncState={setShowFuncState}
-          /> */}
-      </Stack>
-      {/* <Modal
+    <>
+      <BalanceProvider>
+        <Stack
+          id="metaverse"
+          sx={{ position: "relative", width: "100vw", height: "100vh" }}
+        >
+          <Box component="canvas" id="metaverseScene" />
+          {loading && <LoadingScreen progress={progress} />}
+        </Stack>
+        {/* <Modal
         open={showFuncState.showBackpack}
         closeModal={handleCloseBackpackModal}
         width={900}
@@ -105,14 +96,15 @@ export const Metaverse = () => {
       >
         <ChooseCharacter />
       </Modal> */}
-    </BalanceProvider>
+      </BalanceProvider>
+    </>
   );
 };
 
-const initialFuncState: FuncStateType = {
-  showBackpack: false,
-  showChosenCharacter: false,
-  showSettings: false,
-  showChatConversation: false,
-  showStore: false,
-};
+// const initialFuncState: FuncStateType = {
+//   showBackpack: false,
+//   showChosenCharacter: false,
+//   showSettings: false,
+//   showChatConversation: false,
+//   showStore: false,
+// };

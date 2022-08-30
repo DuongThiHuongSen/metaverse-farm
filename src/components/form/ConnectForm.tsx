@@ -10,9 +10,9 @@ import {
   itemWrapperStyle,
 } from "pages/Home/home.style";
 import ConnectButton from "./ConnectButton";
-import { LoginLang } from '../../config/lang/LoginLang';
+import { LoginLang } from "../../config/lang/LoginLang";
 import { FC, memo } from "react";
-import { CommonLang } from '../../config/lang/CommonLang';
+import { CommonLang } from "../../config/lang/CommonLang";
 import store from "store";
 import { appSlice } from "store/app";
 

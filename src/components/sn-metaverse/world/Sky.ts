@@ -94,7 +94,7 @@ export class Sky extends THREE.Object3D implements IUpdatable {
   }
 
   public update(timeScale: number): void {
-    // this.position.copy(this.world.camera.position);
+    this.position.copy(this.world.camera.position);
     this.calculateSunPhiByHour();
     this.refreshSunPosition();
 
